@@ -3,23 +3,23 @@ var wins = 0;
 var losses = 0;
 var userScore = 0;
 var gems = [];
-// var a = gems[0];
-// var b = gems[1];
-// var c = gems[2];
-// var d = gems[3];
-var gemImages = ["./assets/images/purplecrystal.jpg", "./assets/images/bluecrystal.jpg", "./assets/images/redcrystal.jpg", "./assets/images/Orange-Crystals.jpg" ]
+// var gemImages = ["./assets/images/purplecrystal.jpg", "./assets/images/bluecrystal.jpg", "./assets/images/redcrystal.jpg", "./assets/images/Orange-Crystals.jpg" ]
 //generate target number
+var gemValuearr = [];
 var targetNum = myFunction();
 function myFunction(){
     return Math.floor(Math.random() * (102) + 19);
 };
 console.log(targetNum)
-//generate 4 random numbers for gems 
+
+var gemValueSum = function(total,num){
+    return total + num;
+};
 
 
 //have an array of image locations??????
 $(document).ready(function() {
-
+//generate 4 random numbers for gems 
 $("#newGame").on("click", function(){
     $("#target-number").text(targetNum); 
     for (var i = 0; i < 4; i++) {
@@ -37,43 +37,58 @@ $("#newGame").on("click", function(){
 
 $("#gem1").on('click', function(){
     var gem1 = gems[0];
-    $('#userScore').text(gem1);
+    gemValuearr.push(gem1);
+    console.log(gemValuearr);
+    $('#userScore').text(gemValuearr.reduce(gemValueSum));
+//don't know if above is better than below option.... how to use "this" or update userscore and 
+//still beable to use updated value globally
 });
 $("#gem2").on('click', function(){
     var gem2 = gems[1];
-    $('#userScore').text(gem2);
-    console.log(gem2);
+    gemValuearr.push(gem2);
+    console.log(gemValuearr);
+    $('#userScore').text(gemValuearr.reduce(gemValueSum));
+
 });
 $("#gem3").on('click', function(){
     var gem3 = gems[2];
-    $('#userScore').text(gem3);
+    gemValuearr.push(gem3);
+    console.log(gemValuearr);
+    $('#userScore').text(gemValuearr.reduce(gemValueSum));
+
 });    
 $("#gem4").on('click', function(){
     var gem4 = gems[3];
-    $('#userScore').text(gem4);
-});
-    
-});
-    
-    
-    // console.log(valueAtIndex1)
-    // $('userScore').append()
+    gemValuearr.push(gem4);
+    console.log(gemValuearr);
+    $('#userScore').text(gemValuearr.reduce(gemValueSum));
 
-//TODO on click gem, pull value from array
-// add that value to the user score
+});
+    
+// capture click values and update userscore var
+//use userscore var to update #userscore
+
+//if (userScore >= targetNum){
+    //some boolean statement to prevent future clicks
+    //losses ++
+    //alert ("You lose. Play again");
+    //
+    //}else {
+        //wins ++
+        //alert ("Winner!! Please play again");
+        //boolean statement
+            // }
+    
+
+     //also need to reset just the target number and gem values, not wins or losses       
+})
+
+
+    
+    
+    
+//TODO update user score
 // add if/then statements to update wins/losses/reset the game
- 
-    
-    
-       
-    // $("#gem2").on("click", function (){
-    //     $('#userScore').text(gemValue);
-    // })
-    // $("#gem3").on("click", function (){
-    //     $('#userScore').text(gemValue);
-    // })
-    // $("#gem4").on("click", function (){
-    //     $('#userScore').text(gemValue);
-    // })
+
 
      
