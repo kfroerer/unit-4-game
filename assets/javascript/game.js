@@ -26,22 +26,28 @@ var startGame = function(){
 startGame()
 
 var checkWin = function(){
-    if (userScore === targetNum){
+    if (gemValueSum === targetNum){
         alert("You win!!!");
         wins++;
         $('#wins').text(wins);
+        clearGame();  
     }
-    if (userScore > targetNum){
+    if (gemValueSum > targetNum){
         alert("You lose!");
         losses++;
         $('#losses').text(losses);
         }
-     startGame();
+        clearGame();
     }  
-
-
 checkWin();
 
+var clearGame = function(){        
+    $("#userScore").empty();
+    $("#target-number").empty();
+    gemValuearr = [];  
+    startGame(); 
+  });
+}
        
 
 
@@ -85,11 +91,11 @@ $("#gem4").on('click', function(){
   
 });
 
-$(".clear").on("click", function(){
-    $("#userScore").empty();
-    $("#target-number").empty();
-    gemValuearr = [];   
-  });
+// $(".clear").on("click", function(){
+//     $("#userScore").empty();
+//     $("#target-number").empty();
+//     gemValuearr = [];   
+//   });
 
 });
 
