@@ -16,12 +16,36 @@
 </head>
 
 <body>
-    <main class ="game">
+    <main class ="game" style="text-align: center">
         <div id="row">
             <h1>Crystals Collector</h1>
         </div>
         <div class="row">
+                
             <div class="col-8">
+                    <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                        <div class="card-header" style="text-align: center">
+                                            Target Number
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" id="target-number"></h5>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Your Number
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"></h5>
+                                        <h5 class="card-text" id="userScore"></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 <div class="row" id="gemRow">
                     <div class="col-md-3" id="gem1">
                         <img src="./assets/images/Orange-Crystals.jpg" alt="orange" height="200" width="200">
@@ -37,57 +61,31 @@
                         </div>
             </div>
                 <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            Your Number
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text" id="userScore"></p>
-                        </div>
-                    </div>
-                </div>
-                     <div class="col-md-6">
-                         <div class="row">
-                            <div class="card">
-                                <div class="card-header">
-                                    Wins
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" id="wins"></h5>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="row">
-                            <div class="card">
-                                <div class="card-header">
-                                    Losses
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" id="losses"></h5>
-                                </div>
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-4">
+                    <div class="col-md-6">
                         <div class="card">
-                                <div class="card-header">
-                                    Target Number
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" id="target-number"></h5>
-                                </div>
+                            <div class="card-header">
+                                Wins
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="wins"></h5>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-2"></div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Losses
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="losses"></h5>
+                            </div>
+                        </div>
+                    </div>    
                 </div>
+                
             </div>
             <div class="col-4">
-                <div class="card">
+                <div class="card" id="instructions">
                     <div class="card-body">
                         <h3 class="card-title">Game Instructions</h3>
                         <p class="card-text">You'll be given a random number when you click below.
@@ -95,8 +93,7 @@
                             click on one, your total will change. Try to reach the target number!
                             Each time the game starts, the values of the crystals change!
                         </p>
-                        <div class="btn btn-primary" id="newGame">Start</div>
-                        <div class="btn btn-primary" id="clear">Clear</div>
+                        <div class="btn btn-primary" id="clear">Play Again</div>
                     </div>
                 </div>
             </div>
