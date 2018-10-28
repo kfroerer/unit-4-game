@@ -86,3 +86,4 @@ $("#gem4").on('click', function(){
 });
 
 });
+//go back through and update css to resemble Indiana Jones idea

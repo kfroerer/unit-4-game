@@ -1,5 +1,6 @@
 body {
-    background-color: rgb (0,0,.1);
+    background-color: rgb(46, 178, 168);
+
 }
 
 
@@ -8,5 +9,10 @@ h1 {
 }
 
 #instructions {
-    background-image: url(../images/papyrus.jpg)
+    background-color: teal;
 }
+ .card-header{
+     background-color: rgb(255, 117, 238)
+    }
+
+ 
